@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Search Engine</title>
+    <link rel="icon" type="image/icon" href="favicon-32x32.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            /* overflow: hidden; */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #searchInput {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 3px solid black;
+            border-radius: 35px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 79px;
+            
+        }
+
+        .gallery-item {
+            width: 200px;
+            text-align: center;
+            display: none; 
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height:14vw;
+            border-radius: 10px;
+        }
+
+        .gallery-item p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .no-result {
+            text-align: center;
+            color: red;
+            font-size: 18px;
+            display: none;
+        }
+
+
+        body {
+    background: #00bcd482;
+}
+
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: #fafafa;
+  animation: pulse 3s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small{
+  width: 300px;
+  height: 300px;
+  left: -150px;
+  bottom: -150px;
+}
+
+.medium{
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.7;
+}
+
+.shade4{
+  opacity: 0.8;
+}
+
+.shade5{
+  opacity: 0.9;
+}
+
+@keyframes pulse{
+  0%{
+    transform: scale(0.8);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+  
+  100%{
+    transform: scale(0.8);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+      </div>
+      
+    <h1>Search Engine</h1>
+
+    <input type="text" id="searchInput" placeholder="Search images..." onkeyup="filterImages()">
+
+    <div class="gallery" id="imageGallery">
+        <div class="gallery-item" data-keywords="city skyline urban">
+            <img src="https://img.freepik.com/free-photo/futuristic-dubai-landscape_23-2151339749.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="City">
+            <p>City Skyline</p>
+        </div>
+        <div class="gallery-item" data-keywords="city skyline urban">
+            <img src="https://img.freepik.com/premium-photo/dubai-uae-march-21-dubai-marina-dusk-march-21-2016-dubai-uae-city-artificial-channel-length-3-kilometers-along-persian-gulf_141438-1052.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="City">
+            <p>City Skyline</p>
+        </div>
+        <div class="gallery-item" data-keywords="city skyline urban">
+            <img src="https://img.freepik.com/premium-photo/photoraliste-du-colise-de-rome-en-gros-plan-au-coucher-de-soleil-implantation-lpoque-romaine_555090-97979.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="City">
+            <p>City Skyline</p>
+        </div>
+        <div class="gallery-item" data-keywords="beach ocean sea">
+            <img src="https://img.freepik.com/premium-photo/stunning-view-caribbean-beach-sunset-wit-1720105863-4_979520-121733.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Beach">
+            <p>Beach</p>
+        </div>
+        <div class="gallery-item" data-keywords="beach ocean sea">
+            <img src="https://img.freepik.com/premium-photo/holidays-beach-sun-waves-sandcastles-relaxation-adventure-travel-sunshine-sea-breezes_1246444-69846.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Beach">
+            <p>Beach</p>
+        </div>
+        <div class="gallery-item" data-keywords="beach ocean sea">
+            <img src="https://img.freepik.com/free-photo/chair-table-dinning-beach-sea-with-blue-sky_74190-6094.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Beach">
+            <p>Beach</p>
+        </div>
+        <div class="gallery-item" data-keywords="mountains landscape">
+            <img src="https://img.freepik.com/free-photo/snow-covered-mountain-cloudy-sky_198169-175.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Mountains">
+            <p>Mountains</p>
+        </div>
+        <div class="gallery-item" data-keywords="mountains landscape">
+            <img src="https://img.freepik.com/free-photo/beautiful-shot-mountains-with-clear-sky-background_181624-3611.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Mountains">
+            <p>Mountains</p>
+        </div>
+       
+        <div class="gallery-item" data-keywords="mountains landscape">
+            <img src="https://img.freepik.com/free-photo/mountainous-landscape-with-fog_1150-18328.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Mountains">
+            <p>Mountains</p>
+        </div>
+        <div class="gallery-item" data-keywords="flowers garden">
+            <img src="https://img.freepik.com/free-photo/close-up-decorative-roses_23-2150905082.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Flowers">
+            <p>Flowers</p>
+        </div>
+        <div class="gallery-item" data-keywords="flowers garden">
+            <img src="https://img.freepik.com/premium-photo/red-rose-with-droplets-water-its-petals-created-with-generative-ai_1091097-2296.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Flowers">
+            <p>Flowers</p>
+        </div>
+        <div class="gallery-item" data-keywords="flowers garden">
+            <img src="https://img.freepik.com/free-photo/purple-osteospermum-daisy-flower_1373-16.jpg?ga=GA1.1.1639133888.1710839055&semt=ais_hybrid-rr-similar" alt="Flowers">
+            <p>Flowers</p>
+        </div>
+        
+    </div>
+
+    <p id="noResult" class="no-result">No results found.</p>
+
+  
+
+
+    <script>
+      function filterImages() {
+          const input = document.getElementById('searchInput').value.toLowerCase();
+          const galleryItems = document.querySelectorAll('.gallery-item');
+          let hasResult = false;
+  
+          galleryItems.forEach(item => {
+              const keywords = item.getAttribute('data-keywords').toLowerCase();
+  
+              if (keywords.includes(input) && input) {
+                  item.style.display = "block"; 
+                  hasResult = true;
+              } else {
+                  item.style.display = "none";
+              }
+          });
+  
+         
+          document.getElementById('noResult').style.display = hasResult ? "none" : "block";
+      }
+  
+
+      document.querySelectorAll('.gallery-item').forEach(item => item.style.display = "block");
+  </script>
+
+</body>
+</html>
